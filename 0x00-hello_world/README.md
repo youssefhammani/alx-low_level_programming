@@ -1,4 +1,4 @@
-# ** *"Introduction to C Programming: Learning Objectives, Requirements, and Tasks"* **
+# ***"Introduction to C Programming: Learning Objectives, Requirements, and Tasks"***
 
 
 
