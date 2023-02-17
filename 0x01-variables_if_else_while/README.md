@@ -74,3 +74,14 @@ _______________________________________________
 *Within the loop, the **`printf`** function is called to print the value of **`i`**. This is repeated for each iteration of the loop, with the value of **`i`** increasing from **`-1`** to **`9`**.*
 
 *After the loop has finished, a newline character is printed to move the output to a new line. Finally, the program returns **`0`** to indicate successful completion.*
+
+________________________________________________________
+
+
+### 7. Smile in the mirror
+
+*This program uses a **`while`** loop to print the English alphabet in reverse order, starting from the letter 'z' and ending with the letter 'a'.*
+
+*The program starts by declaring a character variable **`alph`** and initializing it with the value 'z'. The **`while`** loop then checks whether **`alph`** is greater than or equal to the character 'a'. As long as this condition is true, the loop executes its body, which consists of printing the character **`alph`** to the screen using the **`putchar`** function, and then decrementing **`alph`** by one.*
+
+*Once alph is decremented down to 'a', the condition **`alph >= 'a'`** becomes false, and the loop terminates. Finally, the program prints a newline character to the screen using **`putchar`**, and returns 0 to indicate that it has run successfully.*
