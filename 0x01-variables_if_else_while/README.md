@@ -105,3 +105,30 @@ ______________________________________________________
 5. *After the loops, the **`putchar('\n')`** statement prints a newline character, which moves the output to the next line.*
 
 6. ***`The return 0`** statement exits the main function with a success status.*
+
+_________________________________________________________________
+
+
+### 9. Patience, persistence and perspiration make an unbeatable combination for success
+
+*This is a C program that prints the numbers 0 through 9 to the console, separated by commas and spaces, and then followed by a newline character.*
+
+**Here's a step-by-step explanation of the code:**
+
+1. ***`int main(void)`** - This declares the main function of the program. It returns an integer, and takes no arguments.*
+
+2. *int nb; - This declares an integer variable called nb.*
+
+3. *for (nb = '0'; nb <= '9'; nb++) - This is a for loop that initializes nb to the character '0', checks whether nb is less than or equal to '9', and increments nb by one after each iteration.*
+
+4. *putchar(nb); - This prints the current value of nb to the console.*
+
+5. *if (nb != '9') - This checks whether the current value of nb is not equal to the character '9'.*
+
+6. *putchar(','); - This prints a comma to the console.*
+
+7. *putchar(' '); - This prints a space to the console.*
+
+8. *putchar('\n'); - This prints a newline character to the console.*
+
+9. *return (0); - This exits the program with a return value of 0, indicating that the program has run successfully.*
