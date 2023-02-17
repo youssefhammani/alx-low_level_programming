@@ -24,3 +24,31 @@ _______________________________________
 ### 1. The last digit
 
 *This is a C program that generates a random number, assigns it to the variable **`n`**, and then prints a message indicating whether the last digit of **`n`** is greater than 5, less than 6 and not 0, or equal to 0.*
+
+________________________________________
+
+
+### 2. I sometimes suffer from insomnia. And when I can't fall asleep, I play what I call the alphabet game
+
+*This program is a simple implementation of a loop in C that prints out the lowercase alphabet using the **`putchar`** function.*
+
+*The program then defines the main function which is the entry point of the program. The main function returns an integer, and in this case, it always returns 0 to indicate successful execution.*
+
+*Within the main function, a variable **`alph`** of type **`char`** is declared and initialized to the lowercase letter 'a'. The program then enters a loop which iterates until the value of **`alph`** is equal to the lowercase letter 'z'.*
+
+*During each iteration of the loop, the **`putchar`** function is called to print the value of **`alph`** to the standard output stream (usually the console). After the loop completes, a newline character is printed to the console using another **`putchar`** function.*
+
+*Overall, this program demonstrates the use of a loop and the **`putchar`** function to output the lowercase alphabet to the console.*
+
+_______________________________________________
+
+
+### 3. alphABET
+
+**This C program outputs all the letters of the English alphabet in both lowercase and uppercase.**
+
+*At the beginning of the program, it includes the header file stdio.h which provides input and output functions such as **`putchar()`**.*
+
+*In the main function, a character variable **`alph`** is declared to store each letter of the alphabet. The first loop starts from the lowercase letter 'a' and continues until it reaches 'z'. Inside the loop, each letter is printed using the **`putchar()`** function.*
+
+*After that, the program enters a second loop that does the same for the uppercase letters 'A' to 'Z'. Once all the letters have been printed, the program outputs a newline character with **`putchar('\n')`** and exits with a return value of 0.*
