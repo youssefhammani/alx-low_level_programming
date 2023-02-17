@@ -52,3 +52,12 @@ _______________________________________________
 *In the main function, a character variable **`alph`** is declared to store each letter of the alphabet. The first loop starts from the lowercase letter 'a' and continues until it reaches 'z'. Inside the loop, each letter is printed using the **`putchar()`** function.*
 
 *After that, the program enters a second loop that does the same for the uppercase letters 'A' to 'Z'. Once all the letters have been printed, the program outputs a newline character with **`putchar('\n')`** and exits with a return value of 0.*
+
+________________________________________________
+
+
+### 4. When I was having that alphabet soup, I never thought that it would pay off
+
+*The program uses a **`for`** loop to iterate over the lowercase letters of the alphabet from 'a' to 'z'. Inside the loop, there is an **`if`** statement that checks whether the current letter is 'q' or 'e'. If it is, the program skips over that letter and continues to the next iteration of the loop. If it's not 'q' or 'e', the program prints the current letter using the **`putchar()`** function.*
+
+*Finally, the program prints a newline character (**`\n`**) to move the output to a new line and returns 0 to indicate that the program has run successfully.*
