@@ -10,9 +10,9 @@ int main(void)
 {
 	int nb;
 
-	nb = 0;
+	nb = '0';
 
-	while (nb++ < 10)
+	while (nb++ <= '9')
 	{
 		putchar(nb);
 	}
