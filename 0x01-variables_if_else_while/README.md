@@ -61,3 +61,16 @@ ________________________________________________
 *The program uses a **`for`** loop to iterate over the lowercase letters of the alphabet from 'a' to 'z'. Inside the loop, there is an **`if`** statement that checks whether the current letter is 'q' or 'e'. If it is, the program skips over that letter and continues to the next iteration of the loop. If it's not 'q' or 'e', the program prints the current letter using the **`putchar()`** function.*
 
 *Finally, the program prints a newline character (**`\n`**) to move the output to a new line and returns 0 to indicate that the program has run successfully.*
+
+_______________________________________________
+
+
+### 5. Numbers
+
+*This is a C program that declares an integer variable **`i`**, initializes it to **`-1`**, and then enters a **`while`** loop.*
+
+*The loop executes the block of code within it repeatedly until the condition within the parentheses evaluates to false. The condition is **`++i < 10`**, which means that **`i`** is first incremented and then checked to see if it is less than **`10`**. The **`++i`** increments the value of **`i`** by **`1`** before evaluating the condition.*
+
+*Within the loop, the **`printf`** function is called to print the value of **`i`**. This is repeated for each iteration of the loop, with the value of **`i`** increasing from **`-1`** to **`9`**.*
+
+*After the loop has finished, a newline character is printed to move the output to a new line. Finally, the program returns **`0`** to indicate successful completion.*
