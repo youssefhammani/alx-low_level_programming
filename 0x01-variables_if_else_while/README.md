@@ -85,3 +85,23 @@ ________________________________________________________
 *The program starts by declaring a character variable **`alph`** and initializing it with the value 'z'. The **`while`** loop then checks whether **`alph`** is greater than or equal to the character 'a'. As long as this condition is true, the loop executes its body, which consists of printing the character **`alph`** to the screen using the **`putchar`** function, and then decrementing **`alph`** by one.*
 
 *Once alph is decremented down to 'a', the condition **`alph >= 'a'`** becomes false, and the loop terminates. Finally, the program prints a newline character to the screen using **`putchar`**, and returns 0 to indicate that it has run successfully.*
+
+______________________________________________________
+
+### 8. Hexadecimal
+
+*This program is written in C and will output the characters from 0 to 9 and a to f.*
+
+**Here's how the code works:**
+
+1. *The first line **`int main(void)`** is the standard definition of a main function.*
+
+2. ***`nb`** and **`alph`** are initialized as variables of type **`int`** and **`char`**, respectively.*
+
+3. *The first for loop prints the numbers 0 through 9. The loop starts by assigning **`nb`** to the character '0', and it continues to run as long as **`nb`** is less than or equal to the character '9'. On each iteration of the loop, the character **`nb`** is printed using the **`putchar`** function.*
+
+4. *The second for loop prints the lowercase letters a through f. The loop starts by assigning **`alph`** to the character 'a', and it continues to run as long as **`alph`** is less than or equal to the character 'f'. On each iteration of the loop, the character **`alph`** is printed using the **`putchar`** function.*
+
+5. *After the loops, the **`putchar('\n')`** statement prints a newline character, which moves the output to the next line.*
+
+6. ***`The return 0`** statement exits the main function with a success status.*
