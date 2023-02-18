@@ -117,18 +117,46 @@ _________________________________________________________________
 
 1. ***`int main(void)`** - This declares the main function of the program. It returns an integer, and takes no arguments.*
 
-2. *int nb; - This declares an integer variable called nb.*
+2. ***`int nb;`** - This declares an integer variable called **`nb`**.*
 
-3. *for (nb = '0'; nb <= '9'; nb++) - This is a for loop that initializes nb to the character '0', checks whether nb is less than or equal to '9', and increments nb by one after each iteration.*
+3. ***`for (nb = '0'; nb <= '9'; nb++)`** - This is a for loop that initializes **`nb`** to the character **`'0'`**, checks whether **`nb`** is less than or equal to **`'9'`**, and increments **`nb`** by one after each iteration.*
 
-4. *putchar(nb); - This prints the current value of nb to the console.*
+4. ***`putchar(nb);`** - This prints the current value of **`nb`** to the console.*
 
-5. *if (nb != '9') - This checks whether the current value of nb is not equal to the character '9'.*
+5. ***`if (nb != '9')`** - This checks whether the current value of **`nb`** is not equal to the character **`'9'`**.*
 
-6. *putchar(','); - This prints a comma to the console.*
+6. ***`putchar(',');`** - This prints a comma to the console.*
 
-7. *putchar(' '); - This prints a space to the console.*
+7. ***`putchar(' ');`** - This prints a space to the console.* 
+8. ***`putchar('\n');`** - This prints a newline character to the console.*
 
-8. *putchar('\n'); - This prints a newline character to the console.*
+9. ***`return (0);`** - This exits the program with a return value of 0, indicating that the program has run successfully.*
 
-9. *return (0); - This exits the program with a return value of 0, indicating that the program has run successfully.*
+_______________________________________________________
+
+
+### 10. Inventing is a combination of brains and materials. The more brains you use, the less material you need
+
+**This program prints all possible different combinations of two digits separated by a comma and a space. The two digits must be different and the output is in ascending order.**
+
+*The program achieves this using two nested loops. The outer loop goes from 0 to 8, and the inner loop goes from the number in the outer loop plus 1 to 9. This ensures that all possible combinations of two digits are covered.*
+
+*Inside the inner loop, the putchar() function is used to print the two digits as characters. The digits are printed using their ASCII code representation, which is obtained by adding the ASCII code for '0' to the numeric value.*
+
+*After each pair of digits is printed, the program checks if it's the last pair of digits or not. If it's not the last pair, a comma and a space are printed to separate the digits.*
+
+*Finally, a newline character is printed to end the output.*
+
+*The program uses a total of 5 putchar() calls to print the output.*
+
+_______________________________________________________________
+
+### 12. Software is eating the World
+
+**This program uses three nested loops to print all possible combinations of three digits between 0 and 9. The digits in each combination are printed in ascending order and separated by a comma and a space.**
+
+*The outer loop iterates over the first digit, from 0 to 7, since the digits must be in ascending order and we want to print the smallest combination of three digits. The second loop iterates over the second digit, from the value of the first digit plus one to 8, to avoid repetitions and maintain the ascending order. The third loop iterates over the third digit, from the value of the second digit plus one to 9, again to avoid repetitions and maintain the ascending order.*
+
+*Inside the innermost loop, the three digits are printed using putchar and the ASCII code of each digit, obtained by adding the digit to the character '0'. Then, a comma and a space are printed, unless this is the last combination.*
+
+*Finally, a newline character is printed, and the main function returns 0 to indicate successful completion of the program.*
