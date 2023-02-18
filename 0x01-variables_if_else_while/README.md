@@ -151,7 +151,7 @@ _______________________________________________________
 
 _______________________________________________________________
 
-### 12. Software is eating the World
+### The success combination in business is: Do what you do better... and: do more of what you do...
 
 **This program uses three nested loops to print all possible combinations of three digits between 0 and 9. The digits in each combination are printed in ascending order and separated by a comma and a space.**
 
@@ -160,3 +160,23 @@ _______________________________________________________________
 *Inside the innermost loop, the three digits are printed using putchar and the ASCII code of each digit, obtained by adding the digit to the character '0'. Then, a comma and a space are printed, unless this is the last combination.*
 
 *Finally, a newline character is printed, and the main function returns 0 to indicate successful completion of the program.*
+
+__________________________________________________________________
+
+### 12. Software is eating the World
+
+**This is a program written in C language that prints all possible combinations of two two-digit numbers.**
+
+*The main function has a return type of **`int`** which means that it will return an integer value. **`void`** in the parentheses indicates that the function takes no arguments.*
+
+*Inside the main function, two integer variables **`num1`** and **`num2`** are declared. The first **`for`** loop starts from **`num1 = 0`** and goes up to **`num1 < 100`**. This loop iterates through all the numbers from 0 to 99.*
+
+*The second **`for`** loop starts from **`num2 = num1 + 1`** and goes up to **`num2 < 100`**. This loop iterates through all the numbers from **`num1 + 1`** to 99, which ensures that each combination of two numbers is only printed once.*
+
+*Inside the nested loops, the four digits of each two-digit number are printed with the **`putchar()`** function. **`putchar()`** writes a character to the standard output stream. The expression **`(num1 / 10) + '0'`** gives the tens digit of num1 and **`(num1 % 10) + '0'`** gives the ones digit of num1. Similarly, **`(num2 / 10) + '0'`** and **`(num2 % 10) + '0'`** give the tens and ones digits of num2. The character ' ' is printed to separate the two numbers.*
+
+*If the current combination of numbers is not the last one, i.e., if **`num1`** is not equal to 98 or if **`num2`** is not equal to 99, a comma and a space are printed.*
+
+*After all the combinations have been printed, a newline character is printed with **`putchar('\n')`**.*
+
+*Finally, the function returns 0, indicating that the program executed successfully.*
