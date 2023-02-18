@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 
 /**
  * main - Entry point
@@ -14,7 +15,7 @@ int main(void)
 	{
 		for (nb_2 = nb_1 + 1; nb_2 <= 8; nb_2++)
 		{
-			for(nb_3 = nb_2 + 1; nb_3 <= 9; nb_3++)
+			for (nb_3 = nb_2 + 1; nb_3 <= 9; nb_3++)
 			{
 				putchar(nb_1 + '0');
 				putchar(nb_2 + '0');
