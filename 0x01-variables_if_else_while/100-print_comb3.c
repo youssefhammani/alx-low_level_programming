@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <time.h>
 
 /**
  * main - Entry point
@@ -9,7 +8,7 @@
 
 int main(void)
 {
-	int nb_1, nb_2;	
+	int nb_1, nb_2;
 	
 	for (nb_1 = 0; nb_1 <= 8; nb_1++)
 	{
@@ -17,7 +16,6 @@ int main(void)
 		{
 			putchar(nb_1 + '0');
 			putchar(nb_2 + '0');
-			
 			if (nb_1 != 8 || nb_2 != 9)
 			{
 				putchar(',');
