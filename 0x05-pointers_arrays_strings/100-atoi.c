@@ -9,10 +9,12 @@
 
 int _atoi(char *s)
 {
-	int sign, result;
+	int sign, result, max_result, max_digit;
 
 	sign = 1;
 	result = 0;
+	max_result = INT_MAX / 10;
+	max_digit = INT_MAX % 10;
 
 	while (*s != '\0')
 	{
