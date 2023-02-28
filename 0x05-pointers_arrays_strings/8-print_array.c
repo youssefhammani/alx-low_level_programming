@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * reverse_array - reverses an array of integers in place
+ * print_array - That function that prints n elements of an array of integers, followed by a new line
  * @a: pointer to the array
  * @n: number of elements in the array
  */
