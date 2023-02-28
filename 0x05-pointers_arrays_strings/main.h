@@ -2,6 +2,7 @@
 #define MAIN_H
 
 #include <stdio.h>
+#include <limits.h>
 
 int _strlen(char *s);
 int _putchar(char c);
