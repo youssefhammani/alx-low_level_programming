@@ -24,7 +24,7 @@ int _atoi(char *s)
 		{
 			if (result > max_result || (result == max_result && (*s - '0') > max_digit))
 			{
-				return sign == 1 ? INT_MAX : INT_MIN;
+				return (sign == 1 ? INT_MAX : INT_MIN);
 			}
 			result = result * 10 + (*s - '0');
 		}
