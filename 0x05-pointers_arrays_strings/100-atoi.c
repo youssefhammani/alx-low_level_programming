@@ -19,7 +19,13 @@ int _atoi(char *s)
 		if (*s == '-')
 			sign *= -1;
 		else if (*s >= '0' && *s <= '9')
+		{
+			if (result > max_result || (result == max_result && (*s - '0') > max_digit))
+			{
+				return sign == 1 ? INT_MAX : INT_MIN;
+			}
 			result = result * 10 + (*s - '0');
+		}
 		else if (result != 0)
 			break;
 		s++;
