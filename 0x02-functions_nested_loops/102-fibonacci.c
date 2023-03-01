@@ -16,7 +16,7 @@ int main(void)
 
 	for (i = 0; i < 50; i++)
 	{
-		printf("%d", a);
+		printf("%lu", a);
 
 		if (i < 49)
 			printf(", ");
