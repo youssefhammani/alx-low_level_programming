@@ -8,8 +8,7 @@
 
 int main(void)
 {
-	int i;
-	unsigned long int sum;
+	int i, sum;
 
 	sum = 0;
 
@@ -18,7 +17,7 @@ int main(void)
 		if (i % 3 == 0 || i % 5 == 0)
 			sum += i;
 	}
-	printf("%lu", sum);
+	printf("%lu\n", sum);
 
 	return (0);
 }
