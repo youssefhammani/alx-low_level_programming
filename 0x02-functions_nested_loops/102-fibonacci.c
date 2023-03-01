@@ -1,0 +1,29 @@
+#include "main.h"
+
+/**
+ * main - That program prints the first 50 Fibonacci numbers,
+ * starting with 1 and 2 .
+ * Return: always 0 (Success)
+ */
+
+
+int main(void)
+{
+	int i, a, b, c;
+
+	a = 1;
+	b = 2;
+
+	for (i = 0; i < 50; i++)
+	{
+		printf("%d", a);
+
+		if (i < 49)
+			printf(", ");
+
+		c = a + b;
+		a = b;
+		b = c;
+	}
+	return (0);
+}
