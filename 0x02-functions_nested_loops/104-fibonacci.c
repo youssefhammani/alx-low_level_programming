@@ -16,14 +16,14 @@ int main(void)
 
 	printf("%ld, %ld, ", a, b);
 
-	for (i = 2; i < 98; i++)
+	for (i = 2; i <= 98; i++)
 	{
 		b = a + b;
 		a = b - a;
 
 		printf("%ld", b);
 
-		if (i < 97)
+		if (i < 98)
 			printf(", ");
 	}
 	printf("\n");
