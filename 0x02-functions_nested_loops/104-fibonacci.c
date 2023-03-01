@@ -9,19 +9,19 @@
 
 int main(void)
 {
-	long long int i, a, b;
+	unsigned long int i, a, b;
 
 	a = 1;
 	b = 2;
 
-	printf("%lld, %lld, ", a, b);
+	printf("%ld, %ld, ", a, b);
 
 	for (i = 2; i < 98; i++)
 	{
 		b = a + b;
 		a = b - a;
 
-		printf("%lld", b);
+		printf("%ld", b);
 
 		if (i < 97)
 			printf(", ");
