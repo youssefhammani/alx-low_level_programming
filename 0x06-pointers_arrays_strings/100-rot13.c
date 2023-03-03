@@ -10,20 +10,21 @@
 char *rot13(char *s)
 {
 	int i, j;
-	char c;
+	char *rot = s;
+	char *alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char *rot_alpha = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	for (i = 0; s[i]; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		c = s[i];
-
-		if ((c >= 'a' && c <= 'm') || (c >= 'A' && c <= 'M'))
+		for (j = 0; alpha[j] != '\0'; j++)
 		{
-			c = c + 13;
+			if (s[i] == alpha[j])
+			{
+				s[i] = rot_alpha[j];
+				break;
+			}
 		}
-		else if ((c >= 'n' && c <= 'z') || (c >= 'N' && c <= 'Z'))
-		{
-			c = c - 13;
-		}
-		s[i] = c;
 	}
+
+	return (rot);
 }
