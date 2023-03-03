@@ -10,14 +10,14 @@ char *leet(char *s)
 {
 	int i, j;
 
-	char letters[] = "aeotl";
-	char numbers[] = "43701";
+	char letters[] = "aAeEoOtTlL";
+	char numbers[] = "4433770011";
 
 	for (i = 0; s[i]; i++)
 	{
 		for (j = 0; letters[j]; j++)
 		{
-			if (s[i] == letters[j] || s[i] == letters[j] - 32)
+			if (s[i] == letters[j])
 			{
 				s[i] = numbers[j];
 				break;
