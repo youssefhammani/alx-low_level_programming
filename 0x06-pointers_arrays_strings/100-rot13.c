@@ -17,9 +17,13 @@ char *rot13(char *s)
 		c = s[i];
 
 		if ((c >= 'a' && c <= 'm') || (c >= 'A' && c <= 'M'))
+		{
 			c = c + 13;
+		}
 		else if ((c >= 'n' && c <= 'z') || (c >= 'N' && c <= 'Z'))
+		{
 			c = c - 13;
+		}
 		s[i] = c;
 	}
 }
