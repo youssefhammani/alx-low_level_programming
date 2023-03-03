@@ -14,14 +14,14 @@ int main(void)
 	a = 1;
 	b = 2;
 
-	printf("%lu, %lu, ", a, b);
+	printf("%lu", a);
 
-	for (i = 2; i < 91; i++)
+	for (i = 1; i < 91; i++)
 	{
+		printf(", %lu", b);
+
 		b = a + b;
 		a = b - a;
-
-		printf(", %lu", b);
 	}
 
 	a1 = a / 1000000000;
