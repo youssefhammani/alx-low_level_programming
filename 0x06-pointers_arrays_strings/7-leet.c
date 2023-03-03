@@ -11,7 +11,7 @@ char *leet(char *s)
 	unsigned int i, j;
 
 	char letters[] = "aAeEoOtTlL";
-	char numbers[] = "4433770011";
+	char numbers[] = "44337071";
 
 	for (i = 0; s[i]; i++)
 	{
