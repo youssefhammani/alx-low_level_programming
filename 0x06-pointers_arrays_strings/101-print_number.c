@@ -9,15 +9,15 @@
 
 void print_number(int n)
 {
-	unsigned int digit, divisor = 1;
+	unsigned int digit, nb = n, divisor = 1;
 
-	if (n < 0)
+	if (nb < 0)
 	{
 		_putchar('-');
-		n = -n;
+		nb = -nb;
 	}
 
-	while (n / divisor > 9)
+	while (nb / divisor > 9)
 		divisor *= 10;
 
 	while (divisor != 0)
