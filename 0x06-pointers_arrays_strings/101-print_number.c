@@ -22,9 +22,9 @@ void print_number(int n)
 
 	while (divisor != 0)
 	{
-		digit = n / divisor;
+		digit = nb / divisor;
 		_putchar(digit + '0');
-		n %= divisor;
+		nb %= divisor;
 		divisor /= 10;
 	}
 }
