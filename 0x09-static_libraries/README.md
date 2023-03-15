@@ -19,9 +19,27 @@ ________________________
 ```bach
 gcc -Wall -pedantic -Werror -Wextra -c *.c
 ```
-to clarify these commands[^1]
 
-[^1]: The **`gcc`** command is a C compiler used to compile and link C programs. Here is an explanation of each flag used in the command:
+
+
+
+
+
+
+
+
+
+
+
+
+
+> to clarify these commands
+
+ 
+*gcc -Wall -pedantic -Werror -Wextra -c *.c*
+
+The **`gcc`** command is a C compiler used to compile and link C programs. Here is an explanation of each flag used in the command:
+
 * **`-Wall`** Enables all warning messages.
 * **`-pedantic`** Causes the compiler to enforce the standard C language in strict manner.
 * **`-Werror`** Treats all warnings as errors, causing compilation to fail if any warnings are generated.
