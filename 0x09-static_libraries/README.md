@@ -223,15 +223,21 @@ _________________________________________
 | libmy.a | static library created including all function prototypes in main.h file |
 
 
+_______________________________
 
 
+**Create a script called create_static_lib.sh that creates a static library called liball.a from all the .c files that are in the current directory.**
+
+```#!/bin/bash
+gcc -Wall -pedantic -Werror -Wextra -c *.c
+ar rcs liball.a *.o
+```
+
+**`#!/bin/bash`** is called the "shebang" line and it tells the shell which interpreter to use to execute the script. In this case, it specifies that the script should be run using the Bash shell.
+
+**`gcc`** is a compiler for the C programming language. The options **`-Wall`**, **`-pedantic`**, **`-Werror`**, and **`-Wextra`** enable additional warnings and error checking during compilation, which can help catch programming mistakes. The option **`-c`** tells gcc to compile each **`.c`** file into a separate object file **`(.o)`**, rather than producing an executable file.
 
 
+**`ar`** is a utility for creating and manipulating static libraries on Unix-like systems. The options **`rcs`** tell **`ar`** to create a new archive (if it doesn't already exist), replace any existing contents, and create an index (so that it can be linked efficiently). The argument **`liball.a`** specifies the name of the library to create. The argument **`*.o`** specifies the object files to include in the library, which in this case are all the **`.o`** files in the current directory.
 
-
-
-
-
-
-
-
+In summary, this script compiles each **`.c`** file in the current directory into a separate object file, and then creates a static library named **`liball.a`** containing all the object files.
