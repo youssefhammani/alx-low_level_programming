@@ -216,10 +216,10 @@ _________________________________________
 
 ## Files
 
-\ File \ Task \
-\------\------\
-\ main.h \ header file with all function prototypes in this directory \
-\ create_static_lib.sh \ creates a static library called liball.a from all the .c files |
+| File | Task |
+|------|------|
+| main.h | header file with all function prototypes in this directory |
+| create_static_lib.sh | creates a static library called liball.a from all the .c files |
 | libmy.a | static library created including all function prototypes in coding.h file |
 
 
