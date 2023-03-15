@@ -1,4 +1,4 @@
-**0x08-static_libraries**
+#10x08-static_libraries
 
 ____________________
 
@@ -17,7 +17,7 @@ ________________________
 **Creating a static library libmy.a**
 
 ```bach
-gcc -Wall -pedantic -Werror -Wextra -c *.c [^1]
+gcc -Wall -pedantic -Werror -Wextra -c *.c.[^1]
 ```
 [^1]: The **`gcc`** command is a C compiler used to compile and link C programs. Here is an explanation of each flag used in the command:
 
