@@ -33,10 +33,10 @@ gcc -Wall -pedantic -Werror -Wextra -c *.c
 
 
 
-> to clarify these commands
+**to clarify these commands**
 
  
-*gcc -Wall -pedantic -Werror -Wextra -c *.c*
+> **gcc -Wall -pedantic -Werror -Wextra -c *.c**
 
 The **`gcc`** command is a C compiler used to compile and link C programs. Here is an explanation of each flag used in the command:
 
