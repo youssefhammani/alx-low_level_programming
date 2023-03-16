@@ -13,6 +13,7 @@ ________________________
 ***The project consists of several mandatory tasks:***
 
 * **`Task 0`** Write a function that allocates memory using malloc.
+* **`Task 1`**  Write a function that creates a dynamic array of integers using malloc.
 
 
 **The project emphasizes proper memory management, using only allowed C standard library functions such as malloc, free, and exit. The code must conform to the Betty style and should not use global variables, with no more than 5 functions per file. The project requires the inclusion of a header file containing the function prototypes and the _putchar function. Additionally, a README.md file must be included in the project directory.**
