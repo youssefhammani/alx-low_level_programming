@@ -19,18 +19,12 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 
-/*
- * _realloc is a custom implementation of the realloc function in C,
- * which is used to resize a previously allocated block of memory.
- *
- * Arguments:
- *  ptr: a pointer to the memory block to be resized
- *  old_size: the current size of the block in bytes
- *  new_size: the desired size of the block in bytes after resizing
- *
- * Returns:
- *  On success, a pointer to the newly resized memory block.
- *  On failure, NULL.
+/**
+ * _realloc - reallocates a memory block using malloc and free
+ * @ptr: pointer to reallocate memory
+ * @old_size: size in bytes of allocated memory
+ * @new_size: newsize of memory block in bytes
+ * Return: void pointer to new allocation of memory
  */
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
