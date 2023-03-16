@@ -44,7 +44,7 @@ char *_memcpy(char *dest, char *src, unsigned int n)
  * Return: pointer to the concatenated string or NULL on failure
  */
 
-char *string_nconcat(char *s1, char *s2, unsigned int n);
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *result;
 	unsigned int len1 = 0, len2 = 0;
@@ -61,7 +61,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n);
 	if (n >= len2)
 		n = len2;
 
-	result = malloc(sizof(char) * (len1 + n + 1));
+	result = malloc(sizeof(char) * (len1 + n + 1));
 
 	if (result == NULL)
 		return (NULL);
