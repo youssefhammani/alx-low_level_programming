@@ -1,70 +1,130 @@
 #include "main.h"
 
 /**
- * _memcpy - copies n bytes from memory area src to memory area dest
- * @dest: pointer to destination memory area
- * @src: pointer to source memory area
- * @n: number of bytes to copy
- *
- * Return: pointer to dest
+ * print_error - Prints an error message and exits
+ * the program with a status code of 98.
  */
 
-char *_memcpy(char *dest, char *src, unsigned int n)
+void print_error(void)
+{
+	printf("Error\n");
+	exit(98);
+}
+
+/**
+ * check_digit_string - Checks if the given string contains only digits.
+ * @s: The string to be checked.
+ */
+
+void check_digit_dtring(char *s)
+{
+	while (*s)
+	{
+		if (*s < '0' || *s > '9')
+			print_error();
+		s++;
+	}
+}
+
+/**
+ * _memset - Sets the first n bytes of the memory
+ * area pointed to by s to the specified value.
+ * @s: Pointer to the memory area to be filled.
+ * @b: The value to be set.
+ * @n: The number of bytes to be set to the value.
+ *
+ * Return: A pointer to the memory area s.
+ */
+
+char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int i;
 
 	for (i = 0; i < n; i++)
-		dest[i] = src[i];
+		s[i] = b;
 
-	return (dest);
+	return (s);
 }
 
-/*
- * _realloc is a custom implementation of the realloc function in C,
- * which is used to resize a previously allocated block of memory.
+/**
+ * _calloc - Allocates memory for an array of
+ * nmemb elements of size bytes each and initializes
+ * the memory to zero.
+ * @nmemb: The number of elements in the array.
+ * @size: The size of each element in bytes.
  *
- * Arguments:
- *  ptr: a pointer to the memory block to be resized
- *  old_size: the current size of the block in bytes
- *  new_size: the desired size of the block in bytes after resizing
- *
- * Returns:
- *  On success, a pointer to the newly resized memory block.
- *  On failure, NULL.
+ * Return: A pointer to the allocated memory, or NULL if the allocation fails.
  */
 
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *new_ptr;
+	void *ptr;
 
-	if (new_size == 0)
-	{
-		free(ptr);
+	if (nmemb == 0 || size == 0)
 		return (NULL);
-	}
 
+	ptr = malloc(nmemb * size);
 	if (ptr == NULL)
-	{
-		new_ptr = malloc(new_size);
-		if (new_ptr == NULL)
-			return (NULL);
-		else
-			return (new_ptr);
-	}
-
-	if (new_size == old_size)
-		return (ptr);
-
-	new_ptr = malloc(new_size);
-	if (new_ptr == NULL)
 		return (NULL);
 
-	if (new_size < old_size)
-		_memcpy(new_ptr, ptr, new_size);
-	else
-		_memcpy(new_ptr, ptr, old_size);
+	_memset(ptr, 0, nmemb * size);
 
-	free(ptr);
+	return (ptr);
+}
 
-	return (new_ptr);
+/**
+ * main - Entry point of the program.
+ * @argc: The number of command-line arguments.
+ * @argv: An array of strings containing the command-line arguments.
+ *
+ * Return: 0 if the program exits normally,
+ * or the appropriate error code if an error occurs.
+ */
+
+int main(int argc, char *argc[])
+{
+	if (argc != 3)
+		print_error();
+
+	check_digit_string(argv[1]);
+	check_digit_string(argv[2]);
+
+	int len1 = 0;
+
+	while (argv[1][lne1])
+		len1++;
+	
+	int len2 = 0;
+
+	while (argv[2][lne2])
+		len2++;
+
+	int *result = _calloc(len1 + len2, sizeof(int));
+	if (result == NULL)
+		print_error();
+
+	int i;
+	for (i = len1 - 1; i >= 0 i--)
+	{
+		int j, carry = 0;
+		for (j = len2 - 1; j >= 0; j--)
+		{
+			int product = (argv[1][i] - '0') * (argv[2][j] - '0');
+			int temp - result[i + j + 1] + product + carry;
+			result[i + j + 1] = temp % 10;
+			carry = temp / 10;
+		}
+		result[i] += carry;
+	}
+
+	int i = 0;
+	while (i < len1 + len2 - 1 && result[i] == 0)
+		i++;
+	for (; i < len1 + len2; i++)
+		printf("%d", result[i]);
+	printf("\n");
+
+	free(result);
+
+	return (0);
 }
