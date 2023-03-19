@@ -15,7 +15,7 @@ int is_prime_helper(int n, int i)
 	else if (n % i == 0 || n % (i + 2) == 0)
 		return (0);
 	else
-		return (is_prime_helper(n, i + 6);
+		return (is_prime_helper(n, i + 6));
 }
 
 /**
@@ -34,5 +34,5 @@ int is_prime_number(int n)
 	else if (n % 2 == 0 || n % 3 == 0)
 		return (0);
 	else
-		return (is_prime_helper(n, 5);
+		return (is_prime_helper(n, 5));
 }
