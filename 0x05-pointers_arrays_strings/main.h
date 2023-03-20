@@ -3,6 +3,9 @@
 
 #include <stdio.h>
 #include <limits.h>
+#include <time.h>
+
+#define PWD_LEN 26
 
 int _strlen(char *s);
 int _putchar(char c);
