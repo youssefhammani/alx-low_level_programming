@@ -27,7 +27,7 @@ int main(void)
 
 	pwd[PWD_LEN] = '\0';
 
-	printf("Tada! Congrats");
+	printf("Tada! Congrats%s\n", pwd);
 
 	return (0);
 }
