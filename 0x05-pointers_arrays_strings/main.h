@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <limits.h>
 #include <time.h>
+#include <stdlib.h>
 
 #define PWD_LEN 26
 
