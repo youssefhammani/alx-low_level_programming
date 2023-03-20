@@ -7,16 +7,24 @@
 
 int main(void)
 {
-	long int n = 612852475143, largest_prime = 2;
+	long int i, n = 612852475143;
 
-	while (n > largest_prime)
+	while (n % 2 == 0)
 	{
-		if (n % largest_prime == 0)
-			n /= largest_prime;
-		else
-			largest_prime++;
+		n /= 2;
 	}
-	printf("%ld\n", largest_prime);
 
+	for (i = 3; i <= sqrt(n); i += 2)
+	{
+		while (n % i == 0)
+		{
+			n /= i;
+		}
+	}
+
+	if (n > 2)
+		printf("%ld\n", n);
+	else
+		printf("%ld\n", i - 2);
 	return (0);
 }
