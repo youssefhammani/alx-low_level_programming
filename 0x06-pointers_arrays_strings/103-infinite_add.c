@@ -1,93 +1,54 @@
 #include "main.h"
 
 /**
- * reverse_string - Reverses a string
- * @str: The string to reverse
- *
- * Return: A pointer to the reversed string
- */
-
-char *reverse_string(char *str)
-{
-	int len = 0;
-	int i;
-	char temp;
-
-	while (str[len])
-		len++;
-
-	for (i = 0; i < len / 2; i++)
-	{
-		temp = str[i];
-		str[i] = str[len - i - 1];
-		str[len - i - 1] = temp;
-	}
-
-	return (str);
-}
-
-/**
- * add_single_digit - Adds two single-digit numbers and returns the carry
- * @n1: The first number
- * @n2: The second number
- * @result: Pointer to where the result will be stored
- *
- * Return: The carry
- */
-
-int add_single_digit(char n1, char n2, char *result)
-{
-	int sum = (n1 - '0') + (n2 - '0');
-	int carry = 0;
-
-	if (sum >= 10)
-	{
-		carry = 1;
-		sum -= 10;
-	}
-
-	*result = sum + '0';
-	return (carry);
-}
-
-/**
- * infinite_add - Adds two numbers
- * @n1: The first number
- * @n2: The second number
- * @r: Pointer to where the result will be stored
- * @size_r: The size of the buffer
- *
- * Return: A pointer to the result
+ * infinite_add - adds two numbers
+ * @n1: number one.
+ * @n2: number two.
+ * @r: buffer that the function will use to store the result.
+ * @size_r: buffer size:
+ * Return: the pointer to dest.
  */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int len1 = 0, len2 = 0;
-	int i, j, carry = 0;
+	int c1 = 0, c2 = 0, op, bg, dr1, dr2, add = 0;
 
-	while (n1[len1])
-		len1++;
-
-	while (n2[len2])
-		len2++;
-
-	if (len1 >= size_r || len2 >= size_r)
+	while (*(n1 + c1) != '\0')
+		c1++;
+	while (*(n2 + c2) != '\0')
+		c2++;
+	if (c1 >= c2)
+		bg = c1;
+	else
+		bg = c2;
+	if (size_r <= bg + 1)
 		return (0);
-
-	for (i = 0, j = 0; i < len1 || i < len2 || carry; i++, j++)
+	r[bg + 1] = '\0';
+	c1--, c2--, size_r--;
+	dr1 = *(n1 + c1) - 48, dr2 = *(n2 + c2) - 48;
+	while (bg >= 0)
 	{
-		if (j >= size_r)
-			return (0);
-
-		carry += i < len1 ? n1[len1 - i - 1] - '0' : 0;
-		carry += i < len2 ? n2[len2 - i - 1] - '0' : 0;
-		carry = add_single_digit(carry + '0', '0', &r[j]);
-
-		if (carry == 1 && j == size_r - 1)
-			return (0);
+		op = dr1 + dr2 + add;
+		if (op >= 10)
+			add = op / 10;
+		else
+			add = 0;
+		if (op > 0)
+		*(r + bg) = (op % 10) + 48;
+		else
+			*(r + bg) = '0';
+		if (c1 > 0)
+			c1--, dr1 = *(n1 + c1) - 48;
+		else
+			dr1 = 0;
+		if (c2 > 0)
+			c2--, dr2 = *(n2 + c2) - 48;
+		else
+			dr2 = 0;
+		bg--, size_r--;
 	}
-
-	r[j] = '\0';
-
-	return (reverse_string(r));
+	if (*(r) == '0')
+		return (r + 1);
+	else
+		return (r);
 }
