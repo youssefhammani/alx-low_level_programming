@@ -23,6 +23,9 @@ int main(int argc, char *argv[])
 		char *ptr;
 		long num = strtol(arg, &ptr, 10);
 
+		printf("num = %ld\n", num);
+		printf("ptr = %s\n", ptr);
+
 		if (*ptr != '\0')
 		{
 			printf("Error\n");
