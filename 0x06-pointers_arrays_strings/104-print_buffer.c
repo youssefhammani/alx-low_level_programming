@@ -1,58 +1,15 @@
 #include "main.h"
 
 /**
- * print_hex_offset - Prints the hexadecimal offset of a line
- *
- * @offset: The offset to print
- */
-
-void print_hex_offset(unsigned int offset)
-{
-	printf("%08x: ", offset);
-}
-
-/**
- * print_hex_content - Prints the hexadecimal content of a line
- *
- * @b: The buffer to print
- * @size: The number of bytes to print
- * @offset: The offset of the line
- */
-
-void print_hex_content(char *b, int size, unsigned int offset)
-{
-	int i;
-
-	for (i = 0; i < size; i += 2)
-	{
-		if (i < size - 1)
-			printf("%02x%02x ", b[i] & 0xff, b[i + 1] & 0xff);
-		else
-			printf("%02x   ", b[i] & 0xff);
-	}
-
-	for (i = 0; i < size; i++)
-	{
-		if (b[i] >= 32 && b[i] <= 126)
-			printf("%c", b[i]);
-		else
-			printf(".");
-	}
-
-	printf("\n");
-}
-
-/**
- * print_buffer - Prints a buffer
- *
- * @b: The buffer to print
- * @size: The number of bytes to print
+ * print_buffer - prints a buffer
+ * @b: buffer.
+ * @size: size of buffer.
+ * Return: no return.
  */
 
 void print_buffer(char *b, int size)
 {
-	int i;
-	unsigned int offset = 0;
+	int i, j;
 
 	if (size <= 0)
 	{
@@ -60,16 +17,45 @@ void print_buffer(char *b, int size)
 		return;
 	}
 
-	while (size > 0)
+	for (i = 0; i < size; i += 10)
 	{
-		if (size >= 10)
-			print_hex_offset(offset);
-		else
-			printf("%08x: ", offset);
-		print_hex_content(b, size > 10 ? 10 : size, offset);
+		printf("%08x: ", i);
 
-		size -= 10;
-		b += 10;
-		offset += 10;
+		for (j = 0; j < 10; j++)
+		{
+			if (i + j < size)
+			{
+				printf("%02x", b[i + j]);
+			}
+			else
+			{
+				printf("  ");
+			}
+			if (j % 2 == 1)
+			{
+				printf(" ");
+			}
+		}
+		
+		for (j = 0; j < 10; j++)
+		{
+			if (i + j < size)
+			{
+				char c = b[i + j];
+				if (c >= 32 && c <= 126)
+				{
+					printf("%c", c);
+				}
+				else
+				{
+					printf(".");
+				}
+			}
+			else
+			{
+				printf(" ");
+			}
+		}
+		printf("\n");
 	}
 }
