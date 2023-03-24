@@ -25,16 +25,6 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[3]);
-
-	if ((argv[2][0] == '/' || argv[2][0] == '%') && num2 == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-
-
 	op_func = get_op_func(argv[2]);
 
 	if (op_func == NULL)
@@ -42,6 +32,9 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
+
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
 
 	result = op_func(num1, num2);
 
