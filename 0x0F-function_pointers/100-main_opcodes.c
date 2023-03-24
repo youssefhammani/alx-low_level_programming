@@ -14,7 +14,7 @@
 int main(int argc, char **argv)
 {
 	int i, num_bytes;
-	unsigned char *main_ptr = (unsigned char *)main;
+	char *main_ptr = (char *)main;
 
 	if (argc != 2)
 	{
