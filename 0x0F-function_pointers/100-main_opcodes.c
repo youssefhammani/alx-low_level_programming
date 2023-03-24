@@ -11,7 +11,7 @@
  * 2 if negative number of bytes
  */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	int i, num_bytes;
 	char *main_ptr = (char *)main;
