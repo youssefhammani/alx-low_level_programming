@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 		exit(1);
 	}
 
-	int num_bytes = atoi(argv[1]);
+	int i, num_bytes = atoi(argv[1]);
 
 	if (num_bytes < 0)
 	{
@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 
 	unsigned char *main_ptr = (unsigned char *)main;
 
-	for (int i = 0; i < num_bytes; i++)
+	for (i = 0; i < num_bytes; i++)
 	{
 		printf("%02x ", *(main_ptr + i));
 	}
