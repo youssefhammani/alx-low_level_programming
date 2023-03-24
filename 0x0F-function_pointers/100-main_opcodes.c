@@ -1,4 +1,5 @@
-#include "3_calc.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * print_opcodes - prints the opcodes of a given function
