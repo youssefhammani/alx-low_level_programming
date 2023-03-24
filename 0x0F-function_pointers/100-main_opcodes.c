@@ -25,7 +25,9 @@ void print_opcodes(int num_bytes)
  * @argc: argument count
  * @argv: argument vector
  *
- * Return: 0 if successful, 1 if incorrect number of arguments, 2 if negative number of bytes
+ * Return: 0 if successful,
+ * 1 if incorrect number of arguments,
+ * 2 if negative number of bytes
  */
 
 int main(int argc, char **argv)
