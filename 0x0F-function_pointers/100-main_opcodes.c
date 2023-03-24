@@ -2,26 +2,6 @@
 #include <stdlib.h>
 
 /**
- * print_opcodes - prints the opcodes of a given function
- * @num_bytes: the number of bytes to print
- *
- * Return: void
- */
-
-void print_opcodes(int num_bytes)
-{
-	int i;
-	unsigned char *ptr = (unsigned char *)print_opcodes;
-
-	for (i = 0; i < num_bytes; i++)
-	{
-		printf("%02x ", *(ptr + i));
-	}
-
-	printf("\n");
-}
-
-/**
  * main - program that prints the opcodes of its own main function
  * @argc: argument count
  * @argv: argument vector
@@ -44,10 +24,16 @@ int main(int argc, char **argv)
 	if (num_bytes < 0)
 	{
 		printf("Error\n");
-		exit(2)
+		exit(2);
 	}
 
-	print_opcodes(num_bytes);
+	unsigned char *main_ptr = (unsigned char *)main;
+
+	for (int i = 0; i < num_bytes; i++)
+	{
+		printf("%02x ", *(main_ptr + i));
+	}
+	printf("\n");
 
 	return (0);
 }
