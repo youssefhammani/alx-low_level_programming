@@ -26,12 +26,12 @@ char *str_concat(char *s1, char *s2)
 		len2++;
 
 	concat_str = malloc(sizeof(char) * (len1 + len2 + 1));
-	if (concat_str = NULL)
+	if (concat_str == NULL)
 		return (NULL);
 
-	for (i = 0; s[i]; i++)
+	for (i = 0; s1[i]; i++)
 		concat_str[i] = s1[i];
-	for (j = 0; s[j]; j++)
+	for (j = 0; s2[j]; j++)
 		concat_str[i + j] = s2[j];
 
 	concat_str[i + j] = '\0';
