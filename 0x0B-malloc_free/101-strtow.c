@@ -23,6 +23,28 @@ int word_count(char *str)
 }
 
 /**
+ * is_empty - Checks if a string is empty.
+ * @str: The string to check.
+ *
+ * Return: 1 if the string is empty, 0 otherwise.
+ */
+
+int is_empty(char *str)
+{
+	int i;
+
+	for (i = 0; str[i]; ++i)
+	{
+		if (str[i] != ' ')
+			break;
+	}
+
+	if (str[i] == '\0')
+		return (1);
+	return (0);
+}
+
+/**
  * strtow - Splits a string into words.
  * @str: The string to split.
  *
@@ -35,7 +57,7 @@ char **strtow(char *str)
 	char **words;
 	int wc, i, j, k;
 
-	if (str == NULL || *str == '\0')
+	if (str == NULL || is_empty(str))
 		return (NULL);
 
 	wc = word_count(str);
@@ -64,9 +86,7 @@ char **strtow(char *str)
 		}
 
 		for (j = 0; str[k] && str[k] != ' '; ++j, ++k)
-		{
 			words[i][j] = str[k];
-		}
 		words[i][j] = '\0';
 	}
 	words[i] = NULL;
