@@ -23,7 +23,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	while ((nread = read(fd, buf, sizeof(buf))) > 0 && total < (ssize_t)letters)
 	{
-		nwritten = write(STDOUT_FILENO, buf, 
+		nwritten = write(STDOUT_FILENO, buf,
 				(nread < (ssize_t)letters - total) ? nread : (ssize_t)letters - total);
 		if (nwritten != nread)
 		{
