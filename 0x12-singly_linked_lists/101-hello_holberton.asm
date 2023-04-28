@@ -1,17 +1,17 @@
+extern printf
+
 section .data
-    hello db "Hello, Holberton", 0
-    fmt db "%s\n", 0
+    msg: db "Hello, Holberton", 10, 0 ; add new line to end of string
+    fmt: db "%s", 0
 
 section .text
     global _start
-
 _start:
-    push hello
-    push fmt
+    mov rdi,fmt
+    mov rsi,msg
+    xor rax,rax
     call printf
-    add rsp, 16  ; clean up the stack
-
-    mov eax, 1   ; exit system call
-    xor ebx, ebx ; return 0 status
-    int 0x80     ; execute syscall
+    xor rdi,rdi ; set exit status to 0
+    mov rax,60 ; exit syscall number
+    syscall
 
