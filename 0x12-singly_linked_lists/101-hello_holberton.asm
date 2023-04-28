@@ -1,17 +1,23 @@
-extern printf
 section .data
-	msg: db "Hello, Holberton", 0
-	fmt: db "%s", 10, 0
+    msg db "Hello, Holberton", 0
+    fmt db "%s\n", 0
 
 section .text
-	global main
-main:
-	push rbp
-	mov rdi,fmt
-	mov rsi,msg
-	mov rax,0
-	call printf
+    global main
 
-	pop rbp
-	mov rax,0
-	ret
+main:
+    ; Set up stack frame
+    push rbp
+    mov rbp, rsp
+
+    ; Call printf function
+    mov rdi, fmt
+    mov rsi, msg
+    xor rax, rax
+    call printf
+
+    ; Clean up stack and exit
+    mov rsp, rbp
+    pop rbp
+    xor eax, eax
+    ret
