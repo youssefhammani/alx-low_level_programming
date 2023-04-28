@@ -1,20 +1,19 @@
 section .data
-    hello db "Hello, Holberton", 10 ; message to print
+    hello db "Hello, Holberton", 0
+    format db "%s\n", 0
 
 section .text
     global main
 
-    extern printf
-
 main:
-    push rbp        ; set up stack frame
-    mov rbp, rsp
+    ; Prepare the arguments for printf
+    mov rdi, format
+    mov rsi, hello
 
-    push hello      ; push message pointer onto stack
-    call printf     ; call printf function
-    add rsp, 8      ; adjust stack pointer to remove message pointer
+    ; Call printf
+    xor eax, eax
+    call printf
 
-    mov rsp, rbp    ; tear down stack frame
-    pop rbp
-
-    ret             ; return from main
+    ; Exit the program
+    xor eax, eax
+    ret
