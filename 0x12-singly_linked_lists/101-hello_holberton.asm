@@ -1,26 +1,17 @@
 section .data
     hello db "Hello, Holberton", 0
-    format db "%s\n", 0
+    fmt db "%s\n", 0
 
 section .text
-    global main
+    global _start
 
-    ; Declare the printf function as external
-    extern printf
-
-main:
-    ; Save the base pointer
-    push rbp
-    mov rbp, rsp
-
-    ; Prepare the arguments for printf
-    mov rdi, format
-    mov rsi, hello
-
-    ; Call printf
+_start:
+    push hello
+    push fmt
     call printf
+    add rsp, 16  ; clean up the stack
 
-    ; Restore the base pointer and return
-    leave
-    ret
+    mov eax, 1   ; exit system call
+    xor ebx, ebx ; return 0 status
+    int 0x80     ; execute syscall
 
