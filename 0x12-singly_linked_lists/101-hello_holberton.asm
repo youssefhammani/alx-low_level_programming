@@ -5,15 +5,22 @@ section .data
 section .text
     global main
 
+    ; Declare the printf function as external
+    extern printf
+
 main:
+    ; Save the base pointer
+    push rbp
+    mov rbp, rsp
+
     ; Prepare the arguments for printf
     mov rdi, format
     mov rsi, hello
 
     ; Call printf
-    xor eax, eax
     call printf
 
-    ; Exit the program
-    xor eax, eax
+    ; Restore the base pointer and return
+    leave
     ret
+
