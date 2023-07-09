@@ -1,66 +1,63 @@
-#include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "lists.h"
 
 /**
- * _write_char - Writes a character to the standard output.
- * @c: The input character.
- *
- * Return: The number of bytes written.
+ * print_loop_message - Prints a message indicating the presence of a loop.
  */
-ssize_t _write_char(char c)
+void print_loop_message(void)
 {
-	return (write(STDOUT_FILENO, &c, 1));
-}
+	char *message = "Loop detected, cannot print list\n";
 
-/**
- * _write_str - Writes a string to the standard output.
- * @str: The input string.
- *
- * Return: The number of bytes written.
- */
-ssize_t _write_str(const char *str)
-{
-	size_t len = 0;
-	ssize_t bytes_written = 0;
-
-	while (str[len] != '\0')
-		len++;
-
-	bytes_written = write(STDOUT_FILENO, str, len);
-
-	return (bytes_written);
-}
-
-/**
- * _write_num - Writes an integer to the standard output.
- * @num: The input number.
- *
- * Return: The number of bytes written.
- */
-ssize_t _write_num(int num)
-{
-	char buffer[12];
-	ssize_t bytes_written = 0;
-
-	if (num < 0)
+	while (*message)
 	{
-		bytes_written += _write_char('-');
-		num *= -1;
+		_putchar(*message);
+		message++;
 	}
+}
+
+/**
+ * print_node_data - Prints the address and value of a listint_t node.
+ * @node: Pointer to the listint_t node.
+ */
+void print_node_data(const listint_t *node)
+{
+	size_t addr = (size_t)node;
+	size_t value = node->n;
+	size_t divisor = 1;
+
+	while (divisor <= addr / 10)
+		divisor *= 10;
+
+	while (divisor > 0)
+	{
+		_putchar('[');
+		print_number(addr / divisor);
+		_putchar(']');
+		_putchar(' ');
+		print_number(value / divisor);
+		_putchar('\n');
+		addr %= divisor;
+		value %= divisor;
+		divisor /= 10;
+	}
+}
+
+/**
+ * print_number - Prints a number digit by digit.
+ * @num: The number to be printed.
+ */
+void print_number(size_t num)
+{
 	if (num == 0)
 	{
-		bytes_written += _write_char('0');
-		return (bytes_written);
+		putchar('0');
+		return;
 	}
 
-	if (num >= 10)
-	{
-		bytes_written += _write_num(num / 10);
-	}
-
-	bytes_written += _write_char('0' + (num % 10));
-	return (bytes_written);
+	if (num / 10)
+		print_number(num / 10);
+	putchar((num % 10) + '0');
 }
 
 /**
@@ -71,44 +68,30 @@ ssize_t _write_num(int num)
  */
 size_t print_listint_safe(const listint_t *head)
 {
+	const listint_t *slow, *fast;
 	size_t count = 0;
-	const listint_t *current = head;
-	const listint_t *loop_node = NULL;
-	char newline = '\n';
 
-	while (current != NULL)
+	slow = head;
+	fast = head;
+
+	while (slow != NULL && fast != NULL && fast->next != NULL)
 	{
-		ssize_t bytes_written = 0;
-		const void *address = (const void *)current;
+		slow = slow->next;
+		fast = fast->next->next;
 
-		bytes_written += _write_str("[0x");
-		bytes_written += _write_num((int)(intptr_t)address);
-		bytes_written += _write_str("] ");
-		bytes_written += _write_num(current->n);
-		bytes_written += _write_char(newline);
-		if (bytes_written == -1)
-			exit(98);
-		count++;
-		if (current->next >= current)
+		if (slow == fast)
 		{
-			loop_node = current->next;
-			break;
-		}
-		current = current->next;
-	}
-
-	if (loop_node != NULL)
-	{
-		ssize_t bytes_written = 0;
-		const void *address = (const void *)loop_node;
-
-		bytes_written += _write_str("-> [0x");
-		bytes_written += _write_num((int)(intptr_t)address);
-		bytes_written += _write_str("] ");
-		bytes_written += _write_num(loop_node->n);
-		bytes_written += _write_char(newline);
-		if (bytes_written == -1)
+			print_loop_message();
 			exit(98);
+		}
 	}
+
+	while (head != NULL)
+	{
+		print_node_data(head);
+		head = head->next;
+		count++;
+	}
+
 	return (count);
 }
