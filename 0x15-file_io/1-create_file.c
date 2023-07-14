@@ -1,14 +1,11 @@
 #include "main.h"
 
 /**
- * create_file - Creates a file with the given name and writes
- * the specified text content.
- * @filename: The name of the file to create.
- * @text_content: The text content to write to the file.
+ * _strlen - functions that return the length of strings
  *
- * Return: 1 on success, -1 on failure.
+ * @s: input char as pointer
+ * Return: the length of string
  */
-
 int _strlen(char *s)
 {
 	int i = 0;
@@ -18,6 +15,14 @@ int _strlen(char *s)
 	return (i);
 }
 
+/**
+ * create_file - Creates a file with the given name and writes
+ * the specified text content.
+ * @filename: The name of the file to create.
+ * @text_content: The text content to write to the file.
+ *
+ * Return: 1 on success, -1 on failure.
+ */
 int create_file(const char *filename, char *text_content)
 {
 	int fd, bytes_written;
