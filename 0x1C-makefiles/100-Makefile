@@ -1,28 +1,30 @@
-CC       := gcc
-SRC      := $(wildcard *.c)
-OBJ      := $(SRC:.c=.o)
-NAME     := school
-RM       := rm -f
-CFLAGS   := -Wall -Werror -Wextra -pedantic
-DEPS     := m.h
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
+
+.PHONY: all clean oclean fclean re
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $@ $^
-
-%.o: %.c $(DEPS)
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) *~ $(OBJ)
+	$(RM) *~ $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
 
-fclean: clean
+fclean: clean oclean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean oclean fclean re
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Ensure the header file m.h is present
+$(OBJ): m.h
