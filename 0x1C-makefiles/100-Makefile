@@ -15,12 +15,12 @@ $(NAME): m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME) $(CFLAGS)
 
 clean:
-	$(RM) *~ $(NAME) $(wildcard *.o)
+	$(RM) *~ $(NAME)
 
 oclean:
-	$(RM) $(wildcard *.o)
+	$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(wildcard *.o)
+	$(RM) $(OBJ)
 
 re: oclean all
