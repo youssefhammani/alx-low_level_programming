@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -pedantic
-SRC = main.c school.c
+SRC = $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
 NAME = school
 RM = rm -f
@@ -13,17 +13,15 @@ $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) *~ $(NAME)
+	$(RM) *~ $(NAME) $(wildcard *~)
 
 oclean:
 	$(RM) $(OBJ)
 
 fclean: clean oclean
-	$(RM) $(NAME)
 
 re: fclean all
 
-# Ensure the header file m.h is present
 $(OBJ): m.h
 
 %.o: %.c
