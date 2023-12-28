@@ -9,7 +9,7 @@ RM = rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
@@ -25,6 +25,3 @@ re: fclean all
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-
-# Ensure the header file m.h is present
-$(OBJ): m.h
