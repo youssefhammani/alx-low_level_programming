@@ -23,8 +23,8 @@ fclean: clean oclean
 
 re: fclean all
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
 # Ensure the header file m.h is present
 $(OBJ): m.h
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
