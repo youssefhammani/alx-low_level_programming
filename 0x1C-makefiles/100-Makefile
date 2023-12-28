@@ -1,15 +1,12 @@
 # 100-Makefile
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -pedantic
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
-
-all: $(NAME)
-
-$(NAME): $(OBJ)
+all: m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
@@ -19,11 +16,7 @@ oclean:
 	$(RM) $(OBJ)
 
 fclean: clean oclean
-	$(RM) $(NAME)
 
-re: fclean all
-
-# Ensure the header file m.h is present
-$(OBJ): m.h
+re: oclean all
 
 .PHONY: all clean oclean fclean re
